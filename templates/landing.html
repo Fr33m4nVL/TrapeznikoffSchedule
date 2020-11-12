@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Document</title>
+</head>
+<body class="bg-gray-300">
+    <nav>
+        <h1 id="name-1" class="text-center py-5 text-5xl">Trapeznik<span class="text-purple-600">off.</span><br /><span class="text-pink-600" id="name-2">Schedule</span></h1>
+    </nav>
+    <div class="bg-purple-500 flex justify-between mt-32">
+
+        <div class="flex-initial bg-yellow-500 ml-32">
+            <h1 class="text-5xl text-gray-700">An useful place for keeping<br /><span class="text-pink-600 px-16">your homework done</span></h1>
+            <button class="bg-pink-600 rounded-2xl text-white px-10">Watch your <br/>homework</button>
+        </div>
+
+        <div class="homework flex-initial bg-red-500 mr-32">
+            <h1>History</h1>
+        </div>
+
+    </div>
+</body>
+</html>
