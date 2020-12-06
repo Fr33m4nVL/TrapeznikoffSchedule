@@ -24,14 +24,23 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     #3rd Party
     'rolepermissions',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_framework_swagger',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'rest_auth',
+    'rest_auth.registration',
 
     #Local
     #'users.apps.UsersConfig',
+    'api.apps.ApiConfig',
     'schedule.apps.ScheduleConfig',
     'landing_page.apps.LandingPageConfig',
 ]
@@ -121,6 +130,26 @@ STATICFILES_DIRS = [
 #3rd Party modules
 ROLEPERMISSIONS_MODULE = 'trp_sll.roles'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+}
+
 CORS_ORIGIN_WHITELIST = (
     'https://localhost:3000',
 )
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+SITE_ID = 1
+
+SWAGGER_SETTING = {
+    'LOGIN_URL': 'rest_framework:login',
+    'LOGOUT_URL': 'rest_frmaework:logout',
+}

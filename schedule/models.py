@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Subject(models.Model):
     name = models.CharField(max_length=200)
-    #teacher
+    teacher = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -11,9 +11,9 @@ class Subject(models.Model):
 class Homework(models.Model):
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length=250)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
-    hand_over_date = models.DateField(blank=True, null=True)
+    deadline = models.DateField(blank=True, null=True)
 
     def __str__(self):
         return self.title
