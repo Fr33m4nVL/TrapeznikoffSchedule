@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     #'users.apps.UsersConfig',
     'api.apps.ApiConfig',
     'schedule.apps.ScheduleConfig',
-    'landing_page.apps.LandingPageConfig',
 ]
   
 
@@ -127,12 +126,17 @@ STATICFILES_DIRS = [
     'static',
 ]
 
-#3rd Party modules
+# 3rd Party modules
+
+# Roles app
+
 ROLEPERMISSIONS_MODULE = 'trp_sll.roles'
+
+# Rest framework
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        #'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.SessionAuthentication',
@@ -142,12 +146,17 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_WHITELIST = (
-    'https://localhost:3000',
+    'http://localhost:3000',
+    'http://localhost:8000',
 )
+
+# Django allauth
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SITE_ID = 1
+
+# Swagger docs
 
 SWAGGER_SETTING = {
     'LOGIN_URL': 'rest_framework:login',

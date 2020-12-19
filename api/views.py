@@ -6,7 +6,6 @@ from schedule.models import *
 
 # Schedule Viewsets
 class SubjectViewSet(viewsets.ModelViewSet):
-    permission_classes = (permissions.IsAuthenticated,)
     serializer_class = SubjectSerializer
     queryset = Subject.objects.all()
 
