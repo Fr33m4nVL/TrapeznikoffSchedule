@@ -26,7 +26,6 @@ class Homework extends Component {
         console.log(homeworks);
         return ( 
             <div>
-                {this.state.homeworks.filter({subjectId})}
             </div>
         );
     };
